@@ -1,0 +1,53 @@
+.blurred-text {
+  filter: blur(6px);
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.blurred-img {
+  filter: blur(8px) !important;
+  transition: filter 0.3s ease;
+}
+
+.read-time-badge {
+  background: #222;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+
+.grammar-tooltip {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.4;
+  white-space: pre-line;
+  background: #d32f2f;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  max-width: 320px;
+  z-index: 99999;
+  user-select: none;
+  pointer-events: none;
+}
+
+.font-detector-tooltip {
+  font-family: Arial, sans-serif !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+
+
+
+
+
