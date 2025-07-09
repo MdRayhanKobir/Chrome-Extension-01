@@ -230,7 +230,6 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 
         checkGrammar(text).then(data => {
           if (data.error) {
-            // Show error tooltip
             showTooltip(`Error: ${data.error}`);
             return;
           }
@@ -239,8 +238,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
             showTooltip("✅ No grammar issues found!");
             return;
           }
-
-          // Format up to 3 grammar issues nicely
+        
           const issues = data.matches.slice(0, 3).map(match => {
             const suggestions = match.replacements.length > 0
               ? match.replacements.map(r => r.value).join(", ")
@@ -252,7 +250,6 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         });
 
         function showTooltip(message) {
-          // Remove existing tooltip if any
           const oldTip = document.querySelector(".grammar-tooltip");
           if (oldTip) oldTip.remove();
 
@@ -268,7 +265,6 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 
           document.body.appendChild(tooltip);
 
-          // Fade out & remove after 8 seconds
           setTimeout(() => {
             tooltip.style.transition = "opacity 1s ease";
             tooltip.style.opacity = "0";
@@ -397,7 +393,6 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
             tooltip.textContent = `✅ Copied: ${color}`;
           });
 
-          // Remove after 3 seconds
           setTimeout(() => {
             tooltip.remove();
             document.removeEventListener("mousemove", moveHandler);
